@@ -1,9 +1,5 @@
-function showSalary(users, age) {
-  let result = "";
-  for ( user of users ) {
-    if( user.age <= age ){
-      result += (user.name + ", " + user.balance + "\n");
-    }
-  }
-  return result.trim();
+function showSalary( users, age ) {
+  return users.filter( user => ( user.age <= age ) )
+                 .map( user => ( user.name + ", " + user.balance ) )
+                    .join( "\n" );
 }
