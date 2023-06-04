@@ -1,6 +1,4 @@
 function initCarousel() {
-  lenta = document.querySelector('.carousel_inner');
-
   const leftArrowButton = document.querySelector('.carousel__arrow_left');
   const rightArrowButton = document.querySelector('.carousel__arrow_right');
   const carousel = document.querySelector('.carousel__inner');
@@ -9,17 +7,18 @@ function initCarousel() {
   let currentImg = 1;
 
   leftArrowButton.style.display = 'none';
+
   rightArrowButton.addEventListener('click', () => {
     currentOffsetWidth -= carousel.offsetWidth;
     carousel.style.transform = `translateX(${currentOffsetWidth}px)`;
-    currentImg +=1;
-    
-    if (currentImg > 3) {
+    currentImg += 1;
+
+    if (currentImg >= 4) {
       rightArrowButton.style.display = 'none';
     } else {
       rightArrowButton.style.display = '';
     }
-    if (currentImg <  1) {
+    if (currentImg < 1) {
       leftArrowButton.style.display = 'none';
     } else {
       leftArrowButton.style.display = '';
@@ -29,7 +28,7 @@ function initCarousel() {
   leftArrowButton.addEventListener('click', () => {
     currentOffsetWidth += carousel.offsetWidth;
     carousel.style.transform = `translateX(${currentOffsetWidth}px)`;
-    currentImg -=1;
+    currentImg -= 1;
 
     if (currentImg >= 4) {
       rightArrowButton.style.display = 'none';

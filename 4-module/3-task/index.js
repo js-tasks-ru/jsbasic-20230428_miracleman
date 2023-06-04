@@ -1,6 +1,6 @@
 function highlight(table) {
     //console.log(table.tBodies.tbody);
-  tableRows = Array.from(table.rows);
+  const tableRows = Array.from(table.rows);
   tableRows.forEach((tr) => {
     const ageCell = tr.cells[1];
     const genderCell = tr.cells[2];
